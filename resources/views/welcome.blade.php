@@ -25,7 +25,10 @@
     @include('invitation.styles')
 </head>
 
-<body>
+<body class="is-locked">
+
+    {{-- ── INVITATION COVER (Splash screen) ── --}}
+    @include('invitation.cover')
 
     {{-- Music toggle button (hidden if no music URL set) --}}
     @if($config['music_url'])
