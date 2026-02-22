@@ -15,4 +15,10 @@
         {{ explode(' ', $config['groom_name'])[0] }} &amp;<br>
         {{ explode(' ', $config['bride_name'])[0] }}
     </div>
+
+    {{-- Mobile Scroll Hint --}}
+    <div class="mobile-scroll-hint">
+        <div class="mouse"></div>
+        <span>Scroll Down</span>
+    </div>
 </div>

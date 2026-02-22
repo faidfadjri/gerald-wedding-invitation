@@ -1396,15 +1396,15 @@
 
         .left-panel {
             width: 100%;
-            height: auto;
+            height: 100vh;
             position: relative;
         }
 
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: 250px 250px;
-            height: auto;
+            grid-template-rows: 1fr 1fr;
+            height: 100%;
             gap: 2px;
         }
 
@@ -1424,16 +1424,34 @@
         }
 
         .left-overlay {
-            background: linear-gradient(to bottom, transparent 60%, var(--brown-dark));
+            background: linear-gradient(to bottom, transparent 40%, rgba(20, 8, 0, 0.4) 60%, var(--brown-dark));
         }
 
-        .couple-name-left {
-            bottom: 1.5rem;
+        .couple-name-left { bottom: 25%; left: 0; width: 100%; text-align: center; transform: none; font-size: clamp(2.2rem, 10vw, 3.5rem); text-shadow: 0 4px 30px rgba(0, 0, 0, 1), 0 0 10px rgba(0,0,0,0.5); z-index: 10; padding: 0 1rem; box-sizing: border-box; }
+
+        /* Mobile Scroll Hint on Photo Panel */
+        .mobile-scroll-hint { display: flex; flex-direction: column; align-items: center; position: absolute; bottom: 15%; left: 50%; transform: translateX(-50%); z-index: 20; color: rgba(245, 230, 200, 0.8); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; animation: fadeIn 1s ease 0.5s both; }
+
+        .mobile-scroll-hint .mouse {
+            width: 20px;
+            height: 32px;
+            border: 1px solid rgba(245, 230, 200, 0.4);
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .mobile-scroll-hint .mouse::after {
+            content: '';
+            position: absolute;
+            top: 6px;
             left: 50%;
+            width: 2px;
+            height: 6px;
+            background: var(--gold);
             transform: translateX(-50%);
-            text-align: center;
-            font-size: 1.8rem;
-            width: 100%;
+            border-radius: 2px;
+            animation: scrollPulse 2s ease-in-out infinite;
         }
 
         .right-panel {
@@ -1442,17 +1460,7 @@
             overflow-y: visible;
         }
 
-        .side-nav {
-            left: auto;
-            right: 0.8rem;
-            top: auto;
-            bottom: 2rem;
-            transform: none;
-            flex-direction: row;
-            padding: 0.45rem 0.7rem;
-            border-radius: 30px;
-            z-index: 1000;
-        }
+        .side-nav { display: none !important; }
 
         .music-btn {
             right: 1.2rem;
@@ -1471,5 +1479,12 @@
         #hero h1 {
             font-size: 2.6rem;
         }
+    }
+
+    @keyframes scrollPulse {
+        0% { transform: translate(-50%, 0); opacity: 0; }
+        30% { opacity: 1; }
+        60% { transform: translate(-50%, 12px); opacity: 0; }
+        100% { opacity: 0; }
     }
 </style>
