@@ -200,8 +200,10 @@
         will-change: transform;
     }
 
-    .photo-grid .photo-cell:hover img {
-        transform: scale(1.06);
+    @media (hover: hover) {
+        .photo-grid .photo-cell:hover img {
+            transform: scale(1.06);
+        }
     }
 
     .photo-grid .photo-cell:nth-child(1) {
@@ -211,11 +213,16 @@
 
     .photo-grid .photo-cell:nth-child(2) {
         grid-column: 2;
-        grid-row: 1 / 3;
+        grid-row: 1;
     }
 
     .photo-grid .photo-cell:nth-child(3) {
         grid-column: 1;
+        grid-row: 2;
+    }
+
+    .photo-grid .photo-cell:nth-child(4) {
+        grid-column: 2;
         grid-row: 2;
     }
 

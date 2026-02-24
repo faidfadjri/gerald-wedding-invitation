@@ -10,7 +10,7 @@
     @php $config = include resource_path('views/invitation/config.php'); @endphp
 
     <title>The Wedding of {{ explode(' ', $config['groom_name'])[0] }} &amp;
-        {{ explode(' ', $config['bride_name'])[0] }} — {{ $config['wedding_short_date'] }}
+        {{ explode(' ', $config['bride_name'])[1] }} — {{ $config['wedding_short_date'] }}
     </title>
     <meta name="description"
         content="Wedding invitation of {{ $config['groom_name'] }} & {{ $config['bride_name'] }}, {{ $config['wedding_date_display'] }}.">
@@ -40,6 +40,9 @@
         <audio id="bgMusic" preload="none"></audio>
     @endif
 
+    {{-- Auto Scroll button --}}
+    <button class="music-btn playing" id="autoScrollBtn" aria-label="Toggle auto scroll" style="top: {{ $config['music_url'] ? '4.5rem' : '1.2rem' }}; font-size: 1.4rem; padding-bottom: 2px;" title="Auto Scroll">⇊</button>
+
     {{-- Floating side navigation --}}
     @include('invitation.side-nav')
 
@@ -56,7 +59,6 @@
             @include('invitation.sections.couple')
             @include('invitation.sections.savedate')
             @include('invitation.sections.events')
-            @include('invitation.sections.livestream')
             @include('invitation.sections.gift')
             @include('invitation.sections.greetings')
 
@@ -64,7 +66,7 @@
                 <img src="{{ $config['assets']['paper_sm_2'] }}" alt="" class="ornament-float"
                     style="width:70px;opacity:0.22;margin:0 auto 0.8rem;display:block;" aria-hidden="true">
                 Made with ❤ for {{ explode(' ', $config['groom_name'])[0] }} &amp;
-                {{ explode(' ', $config['bride_name'])[0] }}
+                {{ explode(' ', $config['bride_name'])[1] }}
                 &nbsp;·&nbsp; {{ $config['wedding_short_date'] }}
             </footer>
 

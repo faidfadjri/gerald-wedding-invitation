@@ -32,10 +32,86 @@
                     // Trigger animations for the first section visible
                     setTimeout(() => {
                         window.dispatchEvent(new Event('scroll'));
+                        if (typeof startAutoScroll === 'function') startAutoScroll();
                     }, 500);
                 });
             } else {
                 console.warn('Cover or Open Button NOT found', { openBtn, cover });
+            }
+
+            // ── AUTO SCROLL ──────────────────────────────────────────
+            const autoScrollBtn = document.getElementById('autoScrollBtn');
+            let isAutoScrolling = false;
+            let autoScrollReq = null;
+            let lastScrollTime = 0;
+
+            function getScrollContainer() {
+                if (window.innerWidth <= 820) return window;
+                return document.getElementById('rightPanel') || window;
+            }
+
+            function autoScrollStep(time) {
+                if (!isAutoScrolling) return;
+                
+                if (!lastScrollTime) lastScrollTime = time;
+                const delta = time - lastScrollTime;
+
+                if (delta > 30) { // ~30ms per step
+                    const container = getScrollContainer();
+                    if (container === window) {
+                        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                        if (window.scrollY < maxScroll - 1) window.scrollBy({ top: 1, behavior: 'auto' });
+                    } else {
+                        const maxScroll = container.scrollHeight - container.clientHeight;
+                        if (container.scrollTop < maxScroll - 1) container.scrollBy({ top: 1, behavior: 'auto' });
+                    }
+                    lastScrollTime = time;
+                }
+                autoScrollReq = requestAnimationFrame(autoScrollStep);
+            }
+
+            function startAutoScroll() {
+                isAutoScrolling = true;
+                if (!autoScrollReq) {
+                    lastScrollTime = 0;
+                    autoScrollReq = requestAnimationFrame(autoScrollStep);
+                }
+                if (autoScrollBtn) {
+                    autoScrollBtn.classList.add('playing');
+                    autoScrollBtn.innerHTML = '⇊';
+                }
+            }
+
+            function stopAutoScroll() {
+                isAutoScrolling = false;
+                if (autoScrollReq) {
+                    cancelAnimationFrame(autoScrollReq);
+                    autoScrollReq = null;
+                }
+                if (autoScrollBtn) {
+                    autoScrollBtn.classList.remove('playing');
+                    autoScrollBtn.innerHTML = '⏸';
+                }
+            }
+
+            if (autoScrollBtn) {
+                autoScrollBtn.addEventListener('click', function() {
+                    if (isAutoScrolling) stopAutoScroll();
+                    else startAutoScroll();
+                });
+            }
+
+            function handleUserInteraction() {
+                if (isAutoScrolling) stopAutoScroll();
+            }
+            
+            window.addEventListener('wheel', handleUserInteraction, { passive: true });
+            window.addEventListener('touchstart', handleUserInteraction, { passive: true });
+            
+            const rightPanelObj = document.getElementById('rightPanel');
+            if (rightPanelObj) {
+               rightPanelObj.addEventListener('wheel', handleUserInteraction, { passive: true });
+               rightPanelObj.addEventListener('touchstart', handleUserInteraction, { passive: true });
             }
 
             // ── COUNTDOWN ──────────────────────────────────────────

@@ -2,54 +2,45 @@
 
 return [
     /* ── COUPLE ──────────────────────────────────────────── */
-    'bride_name' => 'Shinta Aulia, S.Pd',
-    'bride_instagram' => '@shinta_doe',
-    'bride_role' => 'Youngest Daughter of',
-    'bride_parents' => 'Bapak Sanusi S.M & Ibu Jubaedah',
-    'bride_hometown' => 'dari London Utara',
+    'bride_name' => 'Siti Maysaroh',
+    'bride_instagram' => '@siti_maysaroh',
+    'bride_role' => 'Putri',
+    'bride_parents' => 'Bapak gimun & Ibu Semi',
+    'bride_hometown' => 'Lubuk Rumbai sumatra selatan',
 
-    'groom_name' => 'Gerald Akbar S.Kom',
-    'groom_instagram' => '@john_doe',
-    'groom_role' => 'First Son of',
-    'groom_parents' => 'Bapak Akbar S.kom & Ibu Siti Maimunah',
-    'groom_hometown' => 'dari Jakarta, Indonesia',
+    'groom_name' => 'Geraldo Bima Sabian',
+    'groom_instagram' => '@geraldo',
+    'groom_role' => 'Putra',
+    'groom_parents' => 'Bapak broto Hadibowo & Ibu Anita Setiawati',
+    'groom_hometown' => 'Banjarnegara jawa tengah',
 
     /* ── DATE & VENUE ────────────────────────────────────── */
-    'wedding_datetime' => '2026-02-28T10:00:00+07:00', // ISO 8601 for countdown
-    'wedding_date_display' => 'Saturday, February 28th, 2026',
-    'wedding_short_date' => '28 · 02 · 2026',
+    'wedding_datetime' => '2026-04-10T09:00:00+07:00', // ISO 8601 for countdown
+    'wedding_date_display' => 'Jumat, 10 April 2026',
+    'wedding_short_date' => '10 · 04 · 2026',
 
     'venue_name' => 'Plataran Menteng',
-    'venue_address' => 'Jalan HOS. Cokroaminoto, RT.6/RW.4, Gondangdia,
-                           Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta, Indonesia.',
+    'venue_address' => 'Jl. Desa Muara Kati Baru 1, Kec. Tiang Pumpung Kepungut (TPK),Kab. Musi Rawas, Sumatera Selatan',
     'venue_maps_url' => 'https://maps.app.goo.gl/kKkQottoPTUWyf6s5',
     'venue_maps_embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.82469731521655!3d-6.208763595493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTInMzEuNiJTIDEwNsKwNDknMzMuMiJF!5e0!3m2!1sen!2sid!4v1234567890',
 
     /* ── EVENTS ──────────────────────────────────────────── */
     'events' => [
         [
-            'title' => 'Marriage Contract',
-            'date' => 'Friday, April 28th, 2023',
-            'time' => '09:00 WIB — finish',
-            'location' => 'Masjid Al-Barkah, Jl. Veteran No.46, Rt.003/RW.004,
-                           Marga Jaya, Kec. Bekasi Sel., Kota Bks, Jawa Barat 17141',
-            'maps_url' => 'https://maps.app.goo.gl/kKkQottoPTUWyf6s5',
-        ],
-        [
-            'title' => 'Wedding Reception',
-            'date' => 'Saturday, February 28th, 2026',
-            'time' => '10:00 WIB — 14:00 WIB',
-            'location' => 'Plataran Menteng, Jalan HOS. Cokroaminoto, RT.6/RW.4,
-                           Gondangdia, Kota Jakarta Pusat, DKI Jakarta',
+            'title' => 'Akad & Resepsi',
+            'date' => 'Jumat, 10 April 2026',
+            'time' => 'Akad: 09:00 WIB — Selesai',
+            'location' => 'Jl.Desa Muara Kati Baru 1, Kec. Tiang Pumpung Kepungut (TPK), Kab. Musi Rawas, Sumatera Selatan',
             'maps_url' => 'https://maps.app.goo.gl/kKkQottoPTUWyf6s5',
         ],
     ],
 
     /* ── PHOTOS (left panel grid) ───────────────────────── */
-    // Grid: cell 1 = top-left (tall), cell 2 = right (full height), cell 3 = bottom-left
+    // Grid: cell 1 = top-left, cell 2 = top-right, cell 3 = bottom-left, cell 4 = bottom-right
     'photos' => [
         '/bridge/image-couple.jpeg',    // top-left
-        '/bridge/image-couple-2.jpeg',  // right column (spans full height)
+        '/bridge/image-couple-2.jpeg',  // top-right
+        '/bridge/image-man.jpeg',  // bottom-right (reused)
         '/bridge/image-woman.jpeg',     // bottom-left
     ],
     // CSS object-position per cell for ideal cropping
@@ -57,10 +48,11 @@ return [
         'center top',
         'center center',
         'center 40%',
+        'center center',
     ],
 
     /* ── MUSIC ───────────────────────────────────────────── */
-    'music_url' => '',    // e.g. '/assets/music/wedding-song.mp3'
+    'music_url' => '/assets/music.mp3',    // e.g. '/assets/music/wedding-song.mp3'
     'music_loop' => true,
 
     /* ── STREAMING ───────────────────────────────────────── */
@@ -75,7 +67,7 @@ return [
             'number' => '1650002946771',
         ],
         [
-            'holder' => 'Adek May',
+            'holder' => 'Maysaroh',
             'bank' => 'BNI',
             'number' => '1351670398',
         ],

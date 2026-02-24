@@ -13,7 +13,7 @@
     </div>
     <div class="couple-name-left">
         {{ explode(' ', $config['groom_name'])[0] }} &amp;<br>
-        {{ explode(' ', $config['bride_name'])[0] }}
+        {{ explode(' ', $config['bride_name'])[1] }}
     </div>
 
     {{-- Mobile Scroll Hint --}}

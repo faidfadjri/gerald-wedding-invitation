@@ -4,10 +4,7 @@
     <div class="quran-inner">
         <div class="arabic reveal delay-1">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
         <p class="quran-text reveal delay-2">
-            "And among the signs of His power is that He created for you wives of your own kind,
-            so that you would be inclined and at ease with them, and He made among you
-            a feeling of love and affection. Indeed, in that there are truly signs
-            for a person who thinks."
+            "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir."
         </p>
         <div class="quran-ref reveal delay-3">(QS. Ar-Rum: 21)</div>
         <div style="margin-top:1.5rem;" class="reveal delay-4">
