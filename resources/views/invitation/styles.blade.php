@@ -683,14 +683,15 @@
     }
 
     #hero .eyebrow {
-        font-size: 0.68rem;
+        font-size: 0.72rem;
+        font-weight: 600;
         letter-spacing: 0.3em;
         text-transform: uppercase;
         color: var(--gold);
         margin-bottom: 1rem;
         animation: fadeInDown 0.9s ease 0.6s both;
         animation: shimmer 3s ease-in-out 1s infinite, fadeInDown 0.9s ease 0.6s both;
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 1), 0 0 14px rgba(0, 0, 0, 0.9);
     }
 
     #hero h1 {
@@ -764,7 +765,14 @@
     #quran .quran-inner {
         position: relative;
         z-index: 1;
-        max-width: 360px;
+        max-width: 380px;
+        background: rgba(255, 255, 255, 0.55);
+        padding: 1.8rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(6px);
+        margin: 0 auto;
+        text-align: center;
     }
 
     #quran .arabic {
@@ -786,9 +794,10 @@
     }
 
     #quran .quran-ref {
-        font-size: 0.72rem;
-        color: var(--brown-light);
-        letter-spacing: 0.06em;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--brown-mid);
+        letter-spacing: 0.08em;
     }
 
     /* COUPLE */
