@@ -56,7 +56,7 @@
                 if (!lastScrollTime) lastScrollTime = time;
                 const delta = time - lastScrollTime;
 
-                if (delta > 30) { // ~30ms per step
+                if (delta > 20) { // ~30ms per step
                     const container = getScrollContainer();
                     if (container === window) {
                         const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
