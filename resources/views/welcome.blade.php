@@ -59,7 +59,7 @@
             @include('invitation.sections.couple')
             @include('invitation.sections.savedate')
             @include('invitation.sections.events')
-            @include('invitation.sections.gift')
+            <!-- @include('invitation.sections.gift') -->
             @include('invitation.sections.greetings')
 
             <footer>
